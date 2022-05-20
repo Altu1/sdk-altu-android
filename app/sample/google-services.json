@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "456274041454",
+    "project_id": "rethink-d1-altusdk",
+    "storage_bucket": "rethink-d1-altusdk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456274041454:android:8d85103f91e5ab6991a47f",
+        "android_client_info": {
+          "package_name": "com.d1.altusdk.sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456274041454-1v68n7j51eudv2el1mtqh50jm2uut8sa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaqziUvWHHhebjXXVj_nz7_oimHqWBQyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456274041454-1v68n7j51eudv2el1mtqh50jm2uut8sa.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456274041454-3qhcghrhivb05o0dcjb82lhh19nut22d.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.d1.D1-AltuSDK-Sample"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,2 @@
+rootProject.name = "altu-sdk-android"
+include ':sample'

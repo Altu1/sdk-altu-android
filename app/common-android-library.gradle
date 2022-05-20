@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "$rootDir/jacoco.gradle"
+
+android {
+    compileSdkVersion Versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion Versions.minSdk
+        targetSdkVersion Versions.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+        vectorDrawables.useSupportLibrary = true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            testCoverageEnabled true
+        }
+    }
+
+    testBuildType 'debug'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+        unitTests.returnDefaultValues = true
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation Android.kotlin
+    implementation Android.androidxCore
+
+    //views
+    implementation Libraries.xappcompat
+    implementation Libraries.xconstraintlayout
+    implementation Libraries.material
+
+    testImplementation AndroidTest.junit
+    androidTestImplementation AndroidTest.androidxJunit
+    androidTestImplementation AndroidTest.espresso
+    testImplementation AndroidTest.mockk
+    testImplementation AndroidTest.robolectric
+    implementation AndroidTest.mockwebserver
+    implementation AndroidTest.junitKtx
+}

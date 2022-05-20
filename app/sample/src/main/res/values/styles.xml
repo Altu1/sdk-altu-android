@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--   <style name="altuStyle">-->
+<!--      <item name="altu_main_color">@color/altu_main_color</item>-->
+<!--      <item name="altu_secondary_color">@color/altu_secondary_color</item>-->
+<!--      <item name="altu_main_text_color">@color/altu_main_text_color</item>-->
+<!--      <item name="altu_secondary_text_color">@color/altu_secondary_text_color</item>-->
+<!--      <item name="altu_background_color">@color/altu_background_color</item>-->
+<!--      <item name="altu_avatar">@drawable/avatar_chat_boot</item>-->
+<!--      <item name="altu_chat_avatar">@drawable/avatar_chat_boot</item>-->
+<!--      <item name="altu_chat_title">@string/chat_title_name</item>-->
+<!--   </style>-->
+</resources>
