@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ChatBoot Sample App</string>
+    <string name="chat_title_name">D1 Jornadas Digitais</string>
+
+    <string-array name="conversation_history_type">
+        <item>ALWAYS</item>
+        <item>ONGOING</item>
+    </string-array>
+
+    <string-array name="environments">
+        <item>DEV</item>
+        <item>STG</item>
+        <item>PROD</item>
+        <item>CUSTOM</item>
+    </string-array>
+
+</resources>
