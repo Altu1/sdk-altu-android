@@ -88,11 +88,11 @@ Criando instância
 
 # Métodos disponiveis do object D1AltuSdkConfig
     
-Falta descrição:
+Identificação do Cliente:
 
     setSlug("valor ha informar pela d1")
 
-Falta descrição:
+Chave de acesso fornecida pelo canal App:
 
     setSecret("valor ha informar pela d1")
 
