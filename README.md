@@ -1,5 +1,5 @@
 # D1 Smarkio ALTU SDK
-Esse repositório contêm a documentação do SDK além de cópais dos pacotes binários para Android.
+Esse repositório contêm a documentação do SDK além de cópias dos pacotes binários para Android.
 
 # Guia de implementação
 Esse é o SDK para a funcionalidade de comunicação via Chatbot.
