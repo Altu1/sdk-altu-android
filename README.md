@@ -1,4 +1,4 @@
-# D1 Smarkio ALTU SDK
+# Zenvia NLU SDK
 Esse repositório contêm a documentação do SDK além de cópais dos pacotes binários para Android.
 
 # Guia de implementação
@@ -9,10 +9,34 @@ O SDK foi desenvolvido em Kotlin e conta com suporte amigável a Java.
 # Como instalar
 Para utilizar o SDK deve-se seguir o passo-a-passo abaixo.
 
-# 1º Passo - Requisitos
+# 1º Passo - Requisitos e configuração
 
-   - Conta na D1
-   - Um dispositivo Android para testar
+### Configurar Integração no Zenvia NLU
+- Ter um usuário cadastrado no Zenvia NLU;
+- Acessar a página [Zenvia NLU](https://www.altu.com.br/login) e fazer o login;
+- Na sidebar ir até o ícone **Connect** e selecionar **Canais**;
+- Na tela de canais, escolher a opção **APP** você será redirecionado para página de **Integração com APP**;
+- Em Integrações com APP, clicar no botão **+** no canto direito inferior, que abrirá o formulário **Nova integração** para preenchimento dos campos obrigatórios com *Nome* da integração, opções de seleção de *Assistente* e *Squads*, e clicar no botão adicionar após o preenchimento dos campos;
+- De volta na tela de Integrações com APP, deverá aparecer a integração configurada e ao clicar no botão de edição, será redirecionado para página de **Editar integração** onde deve conter os dados configurados no passo anterior, além dos campos contendo o *Segredo de autorização*, *Chave de criptografia* (ambos contendo os botões de *Exibir* e *Esconder*), *Tempo de inatividade* (tendo por padrão 1h, e podendo ser configurado em um mínimo de 10 minutos e no máximo 24h),  chekbox para *Notificação de push* e abaixo aparecerão as informações de Autenticação para verificação;
+- Ao fazer qualquer alteração, clique no botão **Salvar** no topo da tela.
+
+### Configurar APP
+
+Tendo um dispositivo Android para testar
+
+- Após baixar o APP, deve-se acessar a tela de **Editar integração** do Zenvia NLU para copiar as informações de autenticação;
+- Ao abrir o App, deve-se preencher os campos:  
+  - SourceId;
+  - Slug;
+  - Secret;
+  - Channel (repetir o SourceId);
+  - Salvar histórico de conversa (selecionar Always ou Ongoing);
+  - Ambiente do websocket (selecionar Dev, Staging, Prod ou Custom);
+  - Ambiente do chat (selecionar Dev, Staging, Prod ou Custom);
+- Após preencher toda a configuração, deve-se clicar no botão de chat no canto diteito inferior da tela e será direcionado para o chatbot.
+
+### Uso do bot
+- Esse App foi desenvolvido para troca de mensagens do tipo texto entre o usuário e o bot, os demais componentes suportados pelo Zenvia NLU serão desenvolvidos futuramente.
 
 # 2º Passo - Importe o SDK da D1 para o seu projeto Android.
 
