@@ -15,16 +15,34 @@ Para utilizar o SDK deve-se seguir o passo-a-passo abaixo.
 - Ter um usuário cadastrado no Zenvia NLU;
 - Acessar a página [Zenvia NLU](https://www.altu.com.br/login) e fazer o login;
 - Na sidebar ir até o ícone **Connect** e selecionar **Canais**;
+
+![00_connect](https://user-images.githubusercontent.com/80075244/223219106-b8c8d335-42e5-40bc-9059-976940b4c353.png) || ![01_menu canais](https://user-images.githubusercontent.com/80075244/223219328-a543d4ee-6651-43ac-950c-188e81aaeb81.png)
+
 - Na tela de canais, escolher a opção **APP** você será redirecionado para página de **Integração com APP**;
+
+![02_tela de canais](https://user-images.githubusercontent.com/80075244/223219511-b9558b15-dbaf-4b1a-849c-3967ad835873.png)
+
 - Em Integrações com APP, clicar no botão **+** no canto direito inferior, que abrirá o formulário **Nova integração** para preenchimento dos campos obrigatórios com *Nome* da integração, opções de seleção de *Assistente* e *Squads*, e clicar no botão adicionar após o preenchimento dos campos;
+![03 adicionar nova integração](https://user-images.githubusercontent.com/80075244/223220878-c6b1b86f-8ad2-447c-98df-6213d8903e50.png) 
+![04 renomear integração](https://user-images.githubusercontent.com/80075244/223220998-8460aada-ad11-4f17-995d-dbe20dced819.png)
+
 - De volta na tela de Integrações com APP, deverá aparecer a integração configurada e ao clicar no botão de edição, será redirecionado para página de **Editar integração** onde deve conter os dados configurados no passo anterior, além dos campos contendo o *Segredo de autorização*, *Chave de criptografia* (ambos contendo os botões de *Exibir* e *Esconder*), *Tempo de inatividade* (tendo por padrão 1h, e podendo ser configurado em um mínimo de 10 minutos e no máximo 24h),  chekbox para *Notificação de push* e abaixo aparecerão as informações de Autenticação para verificação;
+![05 editar integração](https://user-images.githubusercontent.com/80075244/223221178-ad60ca44-179c-48f8-9ea6-c66dc3c12271.png)
+![5-1_editar integração](https://user-images.githubusercontent.com/80075244/223221825-00638d6e-ee67-4f5e-8d37-d6a4078bdb47.png)
+![06 Tela de integração app](https://user-images.githubusercontent.com/80075244/223221262-a4fe18d7-379b-4751-8038-6a904d19fb35.png)
+
 - Ao fazer qualquer alteração, clique no botão **Salvar** no topo da tela.
+![5 3_salvar alterações](https://user-images.githubusercontent.com/80075244/223222649-d1239c26-2e16-45aa-b35b-2b4aebc5fa63.png)
 
 ### Configurar APP
 
 Tendo um dispositivo Android para testar
 
 - Após baixar o APP, deve-se acessar a tela de **Editar integração** do Zenvia NLU para copiar as informações de autenticação;
+![06 Tela de integração app](https://user-images.githubusercontent.com/80075244/223222918-f879a206-e993-46ee-b710-938cdc3b1a87.png)
+![07 exibir secret](https://user-images.githubusercontent.com/80075244/223222771-fece64c8-e441-4b82-a442-e72ad322f342.png)
+![08 Secret e source](https://user-images.githubusercontent.com/80075244/223223293-7ba2a4b7-9f84-4ccc-a3fe-fd215a2ab999.png)
+
 - Ao abrir o App, deve-se preencher os campos:  
   - SourceId;
   - Slug;
@@ -32,8 +50,16 @@ Tendo um dispositivo Android para testar
   - Channel (repetir o SourceId);
   - Salvar histórico de conversa (selecionar Always ou Ongoing);
   - Ambiente do websocket (selecionar Dev, Staging, Prod ou Custom);
-  - Ambiente do chat (selecionar Dev, Staging, Prod ou Custom);
+  - Ambiente do chat (selecionar Dev, Staging, Prod ou Custom); 
+  
+![09_app exemplo](https://user-images.githubusercontent.com/80075244/223223434-48313b20-47ce-45bc-8a6e-8d46109c371f.png)
+  
 - Após preencher toda a configuração, deve-se clicar no botão de chat no canto diteito inferior da tela e será direcionado para o chatbot.
+
+![10_app preenchimento](https://user-images.githubusercontent.com/80075244/223223778-7d9ca979-e314-47d4-af1f-127298c25fec.png) 
+
+![11_app bot](https://user-images.githubusercontent.com/80075244/223224327-f1b92a79-edeb-4658-aa61-cffaf7fc2e6d.png)
+
 
 ### Uso do bot
 - Esse App foi desenvolvido para troca de mensagens do tipo texto entre o usuário e o bot, os demais componentes suportados pelo Zenvia NLU serão desenvolvidos futuramente.
