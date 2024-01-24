@@ -124,42 +124,97 @@ Para abrir conexão com o chat e apresentar a tela para o cliente
 Segue um detalhamento dos objetos e métodos do SDK
 
 D1AltuSdkConfig
- - object responsável por definir as configurações usadas no SDK. Só pode haver uma configuração ativa por vez.
+ - Objeto responsável por definir as configurações usadas no SDK. Só pode haver uma configuração ativa por vez.
 
-Criando instância
- - O D1AltuSdkConfig implementa um builder para criar objetos de configuração.
+## Criando instância
+O D1AltuSdkConfig implementa o padrão _builder_ para criar objetos de configuração.
 
         val config = D1AltuSdkConfig
             .setSlug("valor ha informar pela d1")
             .setSecret("valor ha informar pela d1")
             .setConversationHistoryType(ConversationHistoryType.ALWAYS)
+            .setAssistantEnvironment(D1AltuAssistantEnvironment.HOMOL)
             .setWebSocketEnvironment(D1AltuSdkWebSocketEnvironment.DEV)
             .setEnvironment(D1AltuSdkEnvironment.DEV)
 
-# Métodos disponiveis do object D1AltuSdkConfig
-    
-Identificação do Cliente:
+## Métodos disponíveis no objeto D1AltuSdkConfig
 
-    setSlug("valor ha informar pela d1")
+### setSlug()
+Configura a identificação do cliente.
 
-Chave de acesso fornecida pelo canal App:
+Parâmetros:
+- slug: String - **Obrigatório**
 
-    setSecret("valor ha informar pela d1")
+Exemplo:
+```kotlin
+D1AltuSdkConfig.setSlug("zenvia")
+```
+---
+### setSecret()
+Configura a chave de acesso fornecida pelo canal App.
 
-Define o comportamento para historico de conversas:
+Parâmetros:
+- secret: String - **Obrigatório**
 
-    setConversationHistoryType(ConversationHistoryType.ALWAYS)
+Exemplo:
+```kotlin
+D1AltuSdkConfig.setSecret("a1b2c3d4e5f6g7")
+```
+---
+### setConversationHistoryType()
+Define o comportamento para histórico de conversas, podendo ser configurado como **ALWAYS** ou **ONGOING**.
 
-Define o ambiente que sera usado do web socket:
+- **ALWAYS**: Irá armazenar o histórico de mensagens enviadas no atendimento que foi iniciado com essa opção configurada no tipo de histórico.
+- **ONGOING**: Não irá armazenar o histórico de mensagens enviadas no atendimento que foi iniciado com essa opção configurada no tipo de histórico. Quando iniciado um novo atendimento, a tela de chat não terá mensagens anteriores **(a menos que algum atendimento anterior tenha sido iniciado com a configuração ALWAYS)**.
 
-    setWebSocketEnvironment(D1AltuSdkWebSocketEnvironment.DEV)
+Parâmetros:
+- type: ConversationHistoryType - **Obrigatório**
 
-Define o ambiente que sera usado:
+Exemplo:
+```kotlin
+D1AltuSdkConfig.setConversationHistoryType(ConversationHistoryType.ALWAYS)
+// ou
+D1AltuSdkConfig.setConversationHistoryType(ConversationHistoryType.ONGOING)
+```
+---
+### setAssistantEnvironment()
+Define qual ambiente do assistente que será utilizado, podendo ser escolhido entre a versão de **desenvolvimento**, **homologação** e **publicada**.
 
-    setEnvironment(D1AltuSdkEnvironment.DEV)
-    
-    
-# Métodos disponiveis do object D1AltuSdk
+Parâmetros:
+- environment: D1AltuAssistantEnvironment - **Obrigatório**
+
+Exemplo:
+```kotlin
+D1AltuSdkConfig.setAssistantEnvironment(D1AltuAssistantEnvironment.DEV)
+// ou
+D1AltuSdkConfig.setAssistantEnvironment(D1AltuAssistantEnvironment.HOMOL)
+// ou
+D1AltuSdkConfig.setAssistantEnvironment(D1AltuAssistantEnvironment.PUBLISHED)
+```
+---
+### setWebSocketEnvironment()
+Define o ambiente que será usado do WebSocket.
+
+Parâmetros:
+- webSocketEnvironment: D1AltuSdkWebSocketEnvironment - **Obrigatório**
+
+Exemplo:
+```kotlin
+D1AltuSdkConfig.setWebSocketEnvironment(D1AltuSdkWebSocketEnvironment.DEV)
+```
+---
+### setEnvironment()
+Define o ambiente que será usado.
+
+Parâmetros:
+- environment: D1AltuSdkEnvironment - **Obrigatório**
+
+Exemplo:
+```kotlin
+D1AltuSdkConfig.setEnvironment(D1AltuSdkEnvironment.DEV)
+```
+---
+## Métodos disponiveis do object D1AltuSdk
 
 
 Inicializador do SDK, deve ser configurado na classe Application do aplicativo:
@@ -220,6 +275,23 @@ Retorna os dados de notificação e limpa os dados dessa notificação:
 Para habilitar a integração com push notifications basta inicializa na classe Application do seu projeto o SDK de Push da seguinte forma: 
       
       D1PushSdk.setup(this, D1PushSdkConfig)
-    
+
+# Estilização personalizada
+Caso haja a necessidade de alterar as cores da tela de chat, é possível definir alguns parâmetros de estilização para obter o resultado desejado.
+
+Declare o estilo abaixo no arquivo `styles.xml`:
+```xml
+<style name="altuStyle">
+    <item name="znlu_primary_color">@color/znlu_primary_color</item>  
+	<item name="znlu_on_primary_color">@color/znlu_on_primary_color</item>  
+	<item name="znlu_secondary_color">@color/znlu_secondary_color</item>  
+	<item name="znlu_on_secondary_color">@color/znlu_on_secondary_color</item>  
+	<item name="znlu_background">@color/znlu_background</item>  
+	<item name="znlu_medium">@color/znlu_medium</item>  
+	<item name="znlu_dark">@color/znlu_dark</item>
+</style>
+```
+
+
 # Problemas comuns
     TBD
